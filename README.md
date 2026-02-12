@@ -9,12 +9,8 @@
 # Instalación
 ## Instalar dependencias
 - Una vez clonado el repositorio, ejecutar el siguiente comando:
-``` cd ./pps_python_git_docker; pyhton3 -m pip install -r requirements.txt 
-
-```
+`` cd ./pps_python_git_docker; pyhton3 -m pip install -r requirements.txt ``
 
 # Ejecutar la aplicación
 - Ejecutar el siguiente comando:
-```  python3 app.py 
-
-```
+`` python3 app.py ``
