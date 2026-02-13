@@ -2,20 +2,19 @@
 
 import random
 
+def cargar_frases(ruta):
+    with open(ruta, "r", encoding="utf-8") as archivo:
+        frases_leidas = archivo.readlines()
+
+    # Quitar saltos de línea
+    frases_leidas = [frases_leidas.strip() for frases_leidas in frases_leidas]
+
+    return frases_leidas
 # Lista de frases auspiciosas
-FRASES = [
-    "Hoy es un gran día para empezar algo nuevo.",
-    "La fortuna sonríe a los valientes.",
-    "Cada esfuerzo trae su recompensa.",
-    "Confía en tu intuición y triunfarás.",
-    "La paciencia trae grandes resultados.",
-    "Una sonrisa puede cambiar tu día.",
-    "El éxito viene a quien persiste.",
-    "Cree en ti y todo será posible."
-]
+FRASES = cargar_frases("/home/cristian/Documents/Proyectos_Git/balleta_fortuna/pps_python_git_docker/frases.txt")
 
 #Función frotar
-def frotar(n_frases: int = 1) -> list:
+def frotar(n_frases: int =1) -> list:
     pass
     # Seleccionamos aleatoriamente las frases
     return random.choices(FRASES, k=n_frases)  
