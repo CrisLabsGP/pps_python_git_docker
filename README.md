@@ -10,15 +10,12 @@
 ## Instalar dependencias
 - Una vez clonado el repositorio, ejecutar el siguiente comando:
 ``` 
-cd ./pps_python_git_docker; pyhton3 -m pip install -r requirements.txt 
+cd ./pps_python_git_docker; \
+docker build -t balleta-fortuna .; \
+docker run -p 5000:5000 balleta-fortuna 
 ```
 
 # Ejecutar la aplicación
-- Ejecutar el siguiente comando:
-``` 
-python3 app.py 
-```
-
 - Vamos al navegador y ejecutamos lo siguiente en la URL:
 ```
 http://localhost:5000/frotar/<n>

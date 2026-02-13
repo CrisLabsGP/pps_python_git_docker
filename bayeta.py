@@ -11,7 +11,7 @@ def cargar_frases(ruta):
 
     return frases_leidas
 # Lista de frases auspiciosas
-FRASES = cargar_frases("/home/cristian/Documents/Proyectos_Git/balleta_fortuna/pps_python_git_docker/frases.txt")
+FRASES = cargar_frases("./frases.txt")
 
 #Función frotar
 def frotar(n_frases: int =1) -> list:
