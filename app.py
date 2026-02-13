@@ -2,6 +2,8 @@
 
 from bayeta import frotar
 from flask import Flask, jsonify
+from moodle import inicializar_frases, obtener_frases_aleatorias
+
 
 app = Flask(__name__)
 frases = ""
@@ -17,5 +19,7 @@ def endpoint_frotar(frases):
 if __name__ == '__main__':
    
     app.run(host="0.0.0.0", port="5000")
-    endpoint_frotar(frases)
+    #endpoint_frotar(frases)
+    inicializar_frases()
+    obtener_frases_aleatorias(frases)
 

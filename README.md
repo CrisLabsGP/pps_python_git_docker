@@ -8,11 +8,30 @@
 
 # Instalación
 ## Instalar dependencias
-- Una vez clonado el repositorio, ejecutar el siguiente comando:
-``` 
+1. Clonamos el repositorios y construimos la imagen Docker.
+```
+git clone https://github.com/CrisLabsGP/pps_python_git_docker.git; \
 cd ./pps_python_git_docker; \
-docker build -t balleta-fortuna .; \
-docker run -p 5000:5000 balleta-fortuna 
+sudo docker build -t bayeta-fortuna .
+```
+2. Creamos una red virtual en Docker y levantamos MongoDB
+``` 
+sudo docker network create bayeta-net; \
+sudo docker run -d \
+  --name mongo-bayeta \
+  --network bayeta-net \
+  -p 27017:27017 \
+  mongo
+```
+3. Levantamos el contenedor de la Bayeta de la Fortuna.
+``
+sudo docker run -d \
+  --name bayeta-app \
+  --network bayeta-net \
+  -e MONGO_URI="mongodb://mongo-bayeta:27017/" 
+  -p 5000:5000 \
+  bayeta-fortuna
+ 
 ```
 
 # Ejecutar la aplicación

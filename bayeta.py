@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import random
+from moodle import obtener_frases_aleatorias
 
 def cargar_frases(ruta):
     with open(ruta, "r", encoding="utf-8") as archivo:
@@ -14,7 +15,7 @@ def cargar_frases(ruta):
 FRASES = cargar_frases("./frases.txt")
 
 #Función frotar
-def frotar(n_frases: int =1) -> list:
-    pass
-    # Seleccionamos aleatoriamente las frases
-    return random.choices(FRASES, k=n_frases)  
+def frotar(frases):
+    resultado = obtener_frases_aleatorias(frases)
+    return {"frases": resultado}
+
