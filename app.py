@@ -17,9 +17,8 @@ def endpoint_frotar(frases):
     return jsonify({"frases": frases})
 
 if __name__ == '__main__':
-   
+    inicializar_frases()
     app.run(host="0.0.0.0", port="5000")
     #endpoint_frotar(frases)
-    inicializar_frases()
     obtener_frases_aleatorias(frases)
 

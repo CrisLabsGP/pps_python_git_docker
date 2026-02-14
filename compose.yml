@@ -1,0 +1,19 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: bayeta-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+
+  app:
+    build: .
+    container_name: bayeta-fortuna
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/bayeta_db
+
