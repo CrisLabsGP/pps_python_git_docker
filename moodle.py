@@ -22,3 +22,13 @@ def obtener_frases_aleatorias(n=1):
 
     seleccion = random.sample(frases, min(n, len(frases)))
     return [f["frase"] for f in seleccion]
+
+def insertar_frases(frases):
+
+    coleccion = obtener_coleccion()
+
+    documentos = [{"frase": f.strip()} for f in frases]
+    resultado = coleccion.insert_many(documentos)
+
+    return len(resultado.inserted_ids)
+
