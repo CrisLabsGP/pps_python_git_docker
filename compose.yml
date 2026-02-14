@@ -5,6 +5,8 @@ services:
     restart: always
     ports:
       - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
 
   app:
     build: .
@@ -17,3 +19,5 @@ services:
     environment:
       - MONGO_URI=mongodb://mongo:27017/bayeta_db
 
+volumes:
+  mongo_data:
